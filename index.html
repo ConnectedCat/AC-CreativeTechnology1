@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Technology</title>
+    <style>
+        :root {
+            font-size: 12px;
+            --main-bg-color: rgb(231, 160, 251);
+            --tab-bg-color: rgb(221, 145, 0);
+            --special-bg-color: rgb(168, 41, 160);
+        }
+
+        html {
+            background-color: var(--main-bg-color);
+        }
+
+        body {
+            width: 100%;
+            margin: 0px auto 6rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        header {
+            margin: 3rem;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .img-mask {
+            height: 70px;
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-mask img {
+            position: absolute;
+            top: -70px;
+            left: 0px;
+        }
+
+        .flexbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 1rem;
+        }
+
+        .week {
+            background-color: var(--tab-bg-color);
+            border-bottom-left-radius: 3rem;
+            border-top-right-radius: 3rem;
+            padding: 1rem 2rem 3rem 2rem;
+        }
+
+        .grid h2 {
+            grid-column: 1 / -1;
+            background-color: var(--special-bg-color);
+            padding: 2rem;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .week ul li {
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                width: 768px;
+            }
+
+            header {
+                text-align: right;
+                margin: 3rem 0;
+            }
+
+            .flexbox {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="flexbox">
+            <div class="img-mask">
+                <img src="http://cms.artcenter.edu/img/global/logo-art-center.png">
+            </div>
+            <div class="greet">
+                <h1>Creative Technology</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#weekly">Weekly</a></li>
+                        <li><a href="#reading">Reading</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#repos">Repos</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="grid" id="weekly">
+            <div class="week">
+                <h3>Week 1</h3>
+                <h4>Morning</h4>
+                <p>What is Technology?</p>
+                <h4>Afternoon</h4>
+                <p>Project 0 - Rapid intro to WorldWideWeb</p>
+
+            </div>
+            <div class="week">
+                <h3>Week 2</h3>
+                <h4>Morning: History/Future of Creative Tech</h4>
+                <h4>Afternoon: Project 1 - Code as representation</h4>
+            </div>
+            <div class="week">
+                <h3>Week 3</h3>
+                <h4>Morning: What does technology want?</h4>
+                <h4>Afternoon: Project 1 - Code as representation</h4>
+            </div>
+            <div class="week">
+                <h3>Week 4</h3>
+                <h4>Morning: Hacking as a creative practice</h4>
+                <h4>Afternoon: Project 2 - Simulation</h4>
+            </div>
+            <div class="week">
+                <h3>Week 5</h3>
+                <h4>Morning: Iterative design cycle</h4>
+                <h4>Afternoon: Project 2 - Simulation</h4>
+            </div>
+            <div class="week">
+                <h3>Week 6</h3>
+                <h4>Morning: Computer Graphics Foundation</h4>
+                <h4>Afternoon: Project 2 - Simulation</h4>
+            </div>
+
+            <h2>CRIT WEEK - NO ACTIVITIES</h2>
+
+            <div class="week">
+                <h3>Week 8</h3>
+                <h4>Morning: Networks</h4>
+                <h4>Afternoon: Project 3 - Pointless Machines</h4>
+            </div>
+            <div class="week">
+                <h3>Week 9</h3>
+                <h4>Morning: Systems Thinking</h4>
+                <h4>Afternoon: Project 3 - Pointless Machines</h4>
+            </div>
+            <div class="week">
+                <h3>Week 10</h3>
+                <h4>Morning: Media affordances</h4>
+            </div>
+            <div class="week">
+                <h3>Week 11</h3>
+                <h4>HOLIDAY</h4>
+            </div>
+            <div class="week">
+                <h3>Week 12</h3>
+                <h4>Morning: Media and tech ecologies</h4>
+                <h4>Afternoon: Project 4: Generative Graphcis</h4>
+            </div>
+            <div class="week">
+                <h3>Week 13</h3>
+                <h4>Morning: IoT/Smart Everything</h4>
+            </div>
+            <h2>CRIT WEEK - NO ACTIVITIES</h2>
+        </section>
+
+        <section id="reading">
+            <h2>Reading:</h2>
+            <p>Charlie Gere, “The Beginnings of Digital Culture,” Digital Culture (London: Reaktion, 2008), 21-50.</p>
+            <p><a href="https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/" target="_blank">Paul Ford, "What is Code?"</a></p>
+            <p><a href="http://www.catb.org/~esr/writings/cathedral-bazaar/hacker-history/" target="_blank">Eric Raymond: A Brief History of Hackerdom</a></p>
+            <p>McLenzy Wark, "Hacker Manifesto"</p>
+            <p><a href="https://www.interaction-design.org/literature/book/the-glossary-of-human-computer-interaction" target="_blank">The Glossary Of Human-Computer Interaction</a></p>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
