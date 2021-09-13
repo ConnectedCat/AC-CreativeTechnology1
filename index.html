@@ -1,246 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtCenter College of Design | Media Design Practices | Creative Technology 1</title>
 
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            max-width: 80ch;
-        }
-
-        nav li {
-            display: inline-block;
-        }
-
-        .noclass {
-            background-color: darkgray;
-        }
-
-        #week1 h4,
-        #week2 h4 {
-            background-color: lightblue;
-        }
-
-        #week3 h4,
-        #week4 h4 {
-            background-color: lightcoral;
-        }
-
-        #week5 h4,
-        #week6 h4 {
-            background-color: lightgoldenrodyellow;
-        }
-
-        #week8 h4 {
-            background-color: lightsalmon
-        }
-
-        #week9 h4,
-        #week10 h4 {
-            background-color: lightgreen
-        }
-
-        #week11 h4,
-        #week12 h4,
-        #week13 h4 {
-            background-color: lavender
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav>
+            <h6 class="logo">Creative tech 1</h6>
+
+            <input type="checkbox" id="navToggle">
+            <label for="navToggle"></label>
             <ul>
-                <li>Schedule</li>
-                <li>Resources</li>
-                <li>Zoom</li>
+                <li><a href="https://artcenter.zoom.us/j/93366509783?pwd=MGpaeFJNRjkrM092elZMK2F3Q3NFUT09" target="_blank">[ZOOM LINK]</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#resources">RESOURCES</a></li>
+                <li><a href="#students">STUDENTS</a></li>
             </ul>
         </nav>
     </header>
+
+
     <main>
-        <h1>Weekly Schedule:</h1>
+        <!-- <h1>Weekly Schedule:</h1> -->
 
-        <h3>Project: Intro to programming with P5js</h3>
+        <section>
+            <h2>/*<br>Project:<br>Intro to programming with P5js<br>*/</h2>
 
-        <section id="week1">
-            <h4>Week 1: Sept. 13 - 17</h4>
+            <div class="week" id="week1">
+                <h4>Week 1: Sept. 13 - 17</h4>
 
-            <h5>In-class:</h5>
-            <p>P5js environment. Making a shape move inside the window. Code topics: Variables, operations, conditionals, comparison, functions. Concepts: movement, vectors, coordinate matrix, color space, color interpolation</p>
+                <h5>In-class:</h5>
+                <p>P5js environment. Making a shape move inside the window. Code topics: Variables, operations, conditionals, comparison, functions. Concepts: movement, vectors, coordinate matrix, color space, color interpolation</p>
 
-            <h5>Homework:</h5>
-            <p>Create a sketch that expresses non-linear movement on the screen. Look through the documentation to figure out how to add images and sounds that would support the movement.<br>
-            <strong>Documentation:</strong> In the process of your work list the problems you encounter and the solutions you find. After you're done, pick out one of the problems - the most interesting one - and write 2 paragraphs about it and how it was solved. Capture a video of your animation. Post your sketch on openProcessing.</p>
+                <h5>Homework:</h5>
+                <p>Create a sketch that expresses non-linear movement on the screen. Look through the documentation to figure out how to add images and sounds that would support the movement.<br>
+                    <strong>Documentation:</strong> In the process of your work list the problems you encounter and the solutions you find. After you're done, pick out one of the problems - the most interesting one - and write 2 paragraphs about it and how it was solved. Capture a video of your animation. Post your sketch on openProcessing.</p>
+            </div>
+            <div class="week" id="week2">
+                <h4>Week 2: Sept. 20 - 24</h4>
+
+                <h5>In-class:</h5>
+                <p>Creating interactive collections of moving objects. Visualizing datasets. Code topics: arrays, loops, graphics matricies, keyboard and mouse events. Concepts: transformation and rotation, direct/indirect interaction</p>
+                <h5>Homework:</h5>
+                <p>Use randomness and/or Perlin noise to create organic shapes. Add controls for the user to interact and modify them.
+                    <br><strong>Documentation:</strong> in the process of your work capture the images of the iterations - at least 6 in total. Write a sentence or two for each image explaining the evolution of work. Post your sketch to openProcessing.</p>
+            </div>
         </section>
-        <section id="week2">
-            <h4>Week 2: Sept. 20 - 24</h4>
-            
-            <h5>In-class:</h5>
-            <p>Creating interactive collections of moving objects. Visualizing datasets. Code topics: arrays, loops, graphics matricies, keyboard and mouse events. Concepts: transformation and rotation, direct/indirect interaction</p>
-            <h5>Homework:</h5>
-            <p>Use randomness and/or Perlin noise to create organic shapes. Add controls for the user to interact and modify them.
-            <br><strong>Documentation:</strong> in the process of your work capture the images of the iterations - at least 6 in total. Write a sentence or two for each image explaining the evolution of work. Post your sketch to openProcessing.</p>
+
+        <hr>
+        <section>
+            <h2>/*<br>Project 2:<br>Representing natural systems in code<br>*/</h2>
+            <div class="project-brief">
+                <p>Create a sketch that would simulate an existing natural system - look at physics, biology, and other natural sciences for good examples. Start with the environment - where is the system situated? What are the forces the environment might exert on the system? Examine the agents in the system, their relationships to each other and the environment they are in. The look at how this system would develop over time. What are the rules that you are going to come up with, what are the parameters you are going to feed into them and what effect will the changes have on the development of the system.</p>
+            </div>
+
+            <p class="documentation"><strong>Documentation:</strong> create two diagrams: explaining the components of the system and their relationships, and the rules (algorhythms) and how they unford over time. Write about the approximation - which aspects of the natural system that you simulated did you decide NOT to represent and why? Post your work on openProcessing.</p>
+
+            <div class="week" id="week3">
+                <h4>Week 3: Sept. 27 - Oct. 1</h4>
+
+                <h5>In-class:</h5>
+                <p>Object-oriented programming, data exchange, rulesets. Diagramming tools.</p>
+
+                <h5>Homework:</h5>
+                <p>Select the system to model. Create the diagrams describing your system. Build out the environment with the basic relationships and behviours (graphics can be symbolic.)</p>
+            </div>
+            <div class="week" id="week4">
+                <h4>Week 4: Oct. 4 - 8</h4>
+
+                <h5>In-class:</h5>
+                <p>Workshop: finish and present your simulation.</p>
+
+                <h5>Homework:</h5>
+                <p>Compile and submit the documentation.</p>
+            </div>
         </section>
-        
-        <hr> 
-        <h3>Project 2: Representing natural systems in code</h3>
 
-        <p>Create a sketch that would simulate an existing natural system - look at physics, biology, and other natural sciences for good examples. Start with the environment - where is the system situated? What are the forces the environment might exert on the system? Examine the agents in the system, their relationships to each other and the environment they are in. The look at how this system would develop over time. What are the rules that you are going to come up with, what are the parameters you are going to feed into them and what effect will the changes have on the development of the system.</p>
-        <p><strong>Documentation:</strong> create two diagrams: explaining the components of the system and their relationships, and the rules (algorhythms) and how they unford over time. Write about the approximation - which aspects of the natural system that you simulated did you decide NOT to represent and why? Post your work on openProcessing.</p>
-
-        <section id="week3">
-            <h4>Week 3: Sept. 27 - Oct. 1</h4>
-            
-            <h5>In-class:</h5>
-            <p>Object-oriented programming, data exchange, rulesets. Diagramming tools.</p>
-
-            <h5>Homework:</h5>
-            <p>Select the system to model. Create the diagrams describing your system. Build out the environment with the basic relationships and behviours (graphics can be symbolic.)</p>
-        </section>
-        <section id="week4">
-            <h4>Week 4: Oct. 4 - 8</h4>
-            
-            <h5>In-class:</h5>
-            <p>Workshop: finish and present your simulation.</p>
-
-            <h5>Homework:</h5>
-            <p>Compile and submit the documentation.</p>
-        </section>
-        
-        <hr> 
-        <h3>Project 3: Anything is an interface</h4>
-        <p>Create an interactive system (a game, a story, a performance, etc) that relies on the recognition and tracking of the real-world objects by a machine learning system (ML5js). Explore the possibilities of the technology: what it can and cannot do? how subtle can the variations be? what is easy and what is hard to do with the existing tech? Starting with your big idea outline a backup plan - what is plan B to scale it down? What is plan C? What will work if nothing else works?</p>
-        <p><strong>Documentation:</strong> write down your responses to the questions posed in the brief. Capture your explorations of the technology as images; focus on the things you WERE NOT able to do. Post your work on openProcessing.</p>
-        
-        <section id="week5">
-            <h4>Week 5: Oct. 11 - 15</h4>
-            
-            <h5>In-class:</h5>
-            <p>Introduction to machine learning, frameworks and libraries, interface.</p>
-
-            <h5>Homework:</h5>
-            <p></p>
-        </section>
-        <section id="week6">
-            <h4>Week 6: Oct. 18 - 22</h4>
-            
-            <h5>In-class:</h5>
-            <p>Workshop: finish and present your interactive experience.</p>
-
-            <h5>Homework:</h5>
-            <p>Compile and submit the documentation.</p>
-        </section>
-        
-        <hr> 
-        
-        <section id="week7" class="noclass">
-            <h3>Week 7: Oct. 25 - 29</h3>
-            <h4>NO CLASS</h4>
-        </section>
-        
-        <hr> 
-        <h3>Project 4: Intro to Physical Computing</h3>
-        
-        <section id="week8">
-            <h4>Week 8: Nov. 1 - 5</h4>
-            
-            <h5>In-class:</h5>
-            <p>Basics of electricity: current, voltage, resistance, conductivity. Sensors, actuators, microcontrollers. Analog/digital read-write operations.</p>
-
-            <h5>Homework:</h5>
-            <p></p>
-        </section>
-        
-        <hr> 
-        <h3>Project 5: Making music tools</h3>
-        <p>Create a system that allows you to play music (and possibly video) from your computer using a physical custom interface of your own design and creation. Will you make it for your own personal use or more general, usable by a larger group of people? Is it mean for solo preformance or multiple people? Will it be specific to a genre of music? How do you select the parameters that you can manipulate</p>
-        <p><strong>Documentation:</strong> write down your responses to the questions posted in the brief. Create a video detailing the construction of the interface and another one demonstrating the perfomance of your musical instrument.</p>
-        
-        <section id="week9">
-            <h4>Week 9: Nov. 8 - 12</h4> 
-            
-            <h5>In-class:</h5>
-            <p>Serial communication. Processing IDE.</p>
-
-            <h5>Homework:</h5>
-            <p>Assemble all the physical components you will need for the project. Make decisions about the questions posted in the brief. Create a system that would allow you to send multiple messages via a serial communication from ESP32 to your computer.</p>
-        </section>
-        <section id="week10">
-            <h4>Week 10: Nov. 15 - 19</h4>
-            
-            <h5>In-class:</h5>
-            <p>Workshop: finish and present your musical instrument.</p>
-
-            <h5>Homework:</h5>
-            <p>Compile and submit the documentation.</p>
-        </section>
-        
-        <hr> 
-        <h3>Project 6: Synthetic gesture</h3>
-        <p>Create an autonomous electromechanical being capable of communicating a sentiment or emotion through its behavior. Use both electronic and mechanical means to express your vision. Start by selecting a sentiment/emotion to express and find how it is typically expressed in gesture. Can you find non-human examples? How does it translate across species? Can you create a composite gesture from several examples? How does your audience recognise the meaning?</p>
-        <p><strong>Documentation:</strong> write down your responses to the questions posted in the brief; include your research and the examples you find. Include your sketches and capture images of your work in progress. Create a video showing your being with its full range of expression.</p>
-
-        <section id="week11">
-            <h4>Week 11: Nov. 22 - 26</h4>
-
-            <h5>In-class:</h5>
-            <p></p>
-
-            <h5>Homework:</h5>
-            <p>Do the research on the gestures your are trying to express. Make some sketches demonstrating how the creature would behave and function. Assemble the main electronic and material components.</p>
-        </section>
-        <section  id="week12">
-            <h4>Week 12: Nov. 29 - Dec. 3</h4>
-            
-            <h5>In-class:</h5>
-            <p></p>
-
-            <h5>Homework:</h5>
-            <p></p>
-        </section>
-        <section id="week13">
-            <h4>Week 13: Dec. 6 - 10</h4>
-            
-            <h5>In-class:</h5>
-            <p>Workshop: finish and present your autonomous electromechanical being.</p>
-
-            <h5>Homework:</h5>
-            <p>Compile and submit the documentation.</p>
-        </section>
-        <hr> 
-        <section  id="week14" class="noclass">
-            <h3>Week 14: Dec. 13 - 17 </h3>
-            <h4>NO CLASS</h4>
-        </section>
         <hr>
 
-        <h1>Resources</h1>
+        <section>
+            <h2>/*<br>Project 3:<br>Anything is an interface<br>*/</h2>
+            <div class="project-brief">
+                <p>Create an interactive system (a game, a story, a performance, etc) that relies on the recognition and tracking of the real-world objects by a machine learning system (ML5js). Explore the possibilities of the technology: what it can and cannot do? how subtle can the variations be? what is easy and what is hard to do with the existing tech? Starting with your big idea outline a backup plan - what is plan B to scale it down? What is plan C? What will work if nothing else works?</p>
+            </div>
 
-        <h2>Software:</h2>
-        <ul>
-            <li><a href="https://editor.p5js.org/" target="_blank">P5js programming environment</a></li>
-            <li><a href="https://openprocessing.org/" target="_blank">openProcessing platform</a></li>
-            <li><a href="https://ml5js.org/" target="_blank">ML5js library</li>
-            <li><a href="https://www.arduino.cc/en/software" target="_blank">Arduino IDE</a></li>
+            <p class="documentation"><strong>Documentation:</strong> write down your responses to the questions posed in the brief. Capture your explorations of the technology as images; focus on the things you WERE NOT able to do. Post your work on openProcessing.</p>
 
-        </ul>
-        
-        <h2>Hardware:</h2>
-        <ul>
-            <li><a href="#" target="_blank">Adafruit HUZZAH32 (ESP32)</a></li>
-        </ul>
+            <div class="week" id="week5">
+                <h4>Week 5: Oct. 11 - 15</h4>
 
-        <h2>Documentation</h2>
-        <ul>
-            <li><a href="https://p5js.org/reference/" target="_blank">P5js reference</a></li>
-            <li><a href="https://learn.ml5js.org/#/reference/index" target="_blank">ML5js reference</a></li>
-            <li><a href="https://learn.adafruit.com/adafruit-huzzah32-esp32-feather" target="_blank">Huzzah32 overview, pinout, setup</a></li>
-        </ul>
+                <h5>In-class:</h5>
+                <p>Introduction to machine learning, frameworks and libraries, interface.</p>
+
+                <h5>Homework:</h5>
+                <p></p>
+            </div>
+            <div class="week" id="week6">
+                <h4>Week 6: Oct. 18 - 22</h4>
+
+                <h5>In-class:</h5>
+                <p>Workshop: finish and present your interactive experience.</p>
+
+                <h5>Homework:</h5>
+                <p>Compile and submit the documentation.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <div class="week noclass" id="week7">
+            <h3>Week 7: Oct. 25 - 29 &mdash; NO CLASS</h3>
+        </div>
+
+        <hr>
+        <section>
+            <h2>/*<br>Project 4:<br>Intro to Physical Computing<br>*/</h2>
+
+            <div class="week" id="week8">
+                <h4>Week 8: Nov. 1 - 5</h4>
+
+                <h5>In-class:</h5>
+                <p>Basics of electricity: current, voltage, resistance, conductivity. Sensors, actuators, microcontrollers. Analog/digital read-write operations.</p>
+
+                <h5>Homework:</h5>
+                <p></p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>/*<br>Project 5:<br>Making music tools<br>*/</h2>
+            <p>Create a system that allows you to play music (and possibly video) from your computer using a physical custom interface of your own design and creation. Will you make it for your own personal use or more general, usable by a larger group of people? Is it mean for solo preformance or multiple people? Will it be specific to a genre of music? How do you select the parameters that you can manipulate</p>
+            <p><strong>Documentation:</strong> write down your responses to the questions posted in the brief. Create a video detailing the construction of the interface and another one demonstrating the perfomance of your musical instrument.</p>
+
+            <div class="week" id="week9">
+                <h4>Week 9: Nov. 8 - 12</h4>
+
+                <h5>In-class:</h5>
+                <p>Serial communication. Processing IDE.</p>
+
+                <h5>Homework:</h5>
+                <p>Assemble all the physical components you will need for the project. Make decisions about the questions posted in the brief. Create a system that would allow you to send multiple messages via a serial communication from ESP32 to your computer.</p>
+            </div>
+            <div class="week" id="week10">
+                <h4>Week 10: Nov. 15 - 19</h4>
+
+                <h5>In-class:</h5>
+                <p>Workshop: finish and present your musical instrument.</p>
+
+                <h5>Homework:</h5>
+                <p>Compile and submit the documentation.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+
+            <h2>/*<br>Project 6:<br>Synthetic gesture<br>*/</h2>
+            <div class="project-brief">
+                <p>Create an autonomous electromechanical being capable of communicating a sentiment or emotion through its behavior. Use both electronic and mechanical means to express your vision. Start by selecting a sentiment/emotion to express and find how it is typically expressed in gesture. Can you find non-human examples? How does it translate across species? Can you create a composite gesture from several examples? How does your audience recognise the meaning?</p>
+            </div>
+
+            <p class="documentation"><strong>Documentation:</strong> write down your responses to the questions posted in the brief; include your research and the examples you find. Include your sketches and capture images of your work in progress. Create a video showing your being with its full range of expression.</p>
+
+
+            <div class="week" id="week11">
+                <h4>Week 11: Nov. 22 - 26</h4>
+
+                <h5>In-class:</h5>
+                <p></p>
+
+                <h5>Homework:</h5>
+                <p>Do the research on the gestures your are trying to express. Make some sketches demonstrating how the creature would behave and function. Assemble the main electronic and material components.</p>
+            </div>
+            <div id="week12">
+                <h4>Week 12: Nov. 29 - Dec. 3</h4>
+
+                <h5>In-class:</h5>
+                <p></p>
+
+                <h5>Homework:</h5>
+                <p></p>
+            </div>
+            <div class="week" id="week13">
+                <h4>Week 13: Dec. 6 - 10</h4>
+
+                <h5>In-class:</h5>
+                <p>Workshop: finish and present your autonomous electromechanical being.</p>
+
+                <h5>Homework:</h5>
+                <p>Compile and submit the documentation.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <div id="week14" class="week noclass">
+            <h3>Week 14: Dec. 13 - 17 &mdash; NO CLASS</h3>
+        </div>
+        <hr>
+
+        <h1 id="resources">Resources</h1>
+        <section>
+            <h2>/*<br>Software<br>*/</h2>
+            <ul>
+                <li><a href="https://editor.p5js.org/" target="_blank">P5js programming environment</a></li>
+                <li><a href="https://openprocessing.org/" target="_blank">openProcessing platform</a></li>
+                <li><a href="https://ml5js.org/" target="_blank">ML5js library</li>
+                <li><a href="https://www.arduino.cc/en/software" target="_blank">Arduino IDE</a></li>
+
+            </ul>
+
+            <h2>/*<br>Hardware<br>*/</h2>
+            <ul>
+                <li><a href="#" target="_blank">Adafruit HUZZAH32 (ESP32)</a></li>
+            </ul>
+
+            <h2>/*<br>Documentation<br>*/</h2>
+            <ul>
+                <li><a href="https://p5js.org/reference/" target="_blank">P5js reference</a></li>
+                <li><a href="https://learn.ml5js.org/#/reference/index" target="_blank">ML5js reference</a></li>
+                <li><a href="https://learn.adafruit.com/adafruit-huzzah32-esp32-feather" target="_blank">Huzzah32 overview, pinout, setup</a></li>
+            </ul>
+        </section>
+
+        <hr>
+        <section>
+            <h2 id="students">/*<br>Students<br>*/</h2>
+
+            <ul>
+                <li>Arianna D. Borgeson: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Erh-Chen Chang: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Savannah Gaillard: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Benjamin Glasser: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Leslie A. Ho: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Giah Kim: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Enzo Li: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Rongda Tao: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Xiaomeng Wang: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Yanyi Wang: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Ju Xie: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+                <li>Flora Zhou: <a href="#" target="_blank">Code Repository</a>, <a href="#" target="_blank">Documentation</a></li>
+
+            </ul>
+        </section>
     </main>
-    <footer></footer>
+
+    <aside>
+        <h6 class="logo">Creative tech 1</h6>
+        <h6 class="logo"><a href="https://artcenter.zoom.us/j/93366509783?pwd=MGpaeFJNRjkrM092elZMK2F3Q3NFUT09" target="_blank">[ZOOM LINK]</a></h6>
+    </aside>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#resources">RESOURCES</a></li>
+                <li><a href="#students">STUDENTS</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
+
 </html>
