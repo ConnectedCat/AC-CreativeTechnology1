@@ -22,7 +22,7 @@ body {
 
 main {
     margin: 0px auto 0px;
-    padding: 47px 0.5rem 0;
+    padding: 47px 0.5rem 62px;
 }
 
 
@@ -207,10 +207,6 @@ hr {
         display: inline-block;
         padding: 1rem;
         border-right: 1px solid black;
-    }
-
-    footer nav ul li:last-child {
-        background-color: var(--special-bg-color);
     }
 
 }
