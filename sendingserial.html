@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+            display: inline-block;
+            padding: 15px;
+            background-color: lightgrey;
+            color: darkgreen;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <h2>Code for the ESP32 written in Arduino:</h2>
+            <pre><code>
+// define a pin to which a potentiometer is connceted
+#define POTPIN A0
+
+// create a variable where a value we're reading
+// from the potentiometer will be stored
+int value;
+
+void setup() {
+    // setup the potentiometer pin as an input
+    pinMode(POTPIN, INPUT);
+    // start serial communicaiton that would enable us
+    // to send information to a computer via USB cable
+    // at the rate of 9600 bits per second
+    Serial.begin(9600);
+}
+
+void loop() {
+    // read the value in a range from 0 to 4095
+    // from the potentiometer
+    value = analogRead(POTPIN);
+
+    // send that value to the computer to be received
+    // by another program accessing a serial port
+    // at the end of the transmissing an end-of-line (EDL)
+    // character is appended
+    Serial.println(value);
+    
+    // sort delay
+    delay(10);
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Code written in Processing:</h2>
+            <pre><code>
+// import the library containing the functionality
+// necessary to establish and process serial communications                
+import processing.serial.*;
+// make a variable to determine the radius
+// of the circle we'll be drawing
+float radius = 0;
+
+// create a variable to represent a serial port
+Serial myPort;
+
+void setup(){
+    // application window will be 500 by 500 pixels
+    size(500, 500);
+    // create a new serial connection and store its representation
+    // in the variable created above
+    // the connection is created between 'this' program
+    // and the serial port with the name 'COM3'
+    // (replace with a different name as needed - 
+    // if you're using it with an Arduino, check the name of the port
+    // to which your board is connected by switching to ArduinoIDE, 
+    // then going to Tools -> Port submenu)
+    // the communicaiton is established at 9600 bits per second
+    // this rate needs to match the rate of transmission
+    // (if you're using it with an Arduino, check the function
+    // 'Serial.begin(rate_here)' - make sure the numbers match)
+    myPort = new Serial(this, "COM3", 9600);
+    // accept characters until the special character is encountered
+    // in this case '\n', signifying end-of-line (EDL) character
+    // This would correspond to the statement 'Serial.println'
+    // in Arduino, which adds the EDL character automatically -
+    // as opposed to 'Serial.print', which does not
+    myPort.bufferUntil('\n');
+}
+
+void draw(){
+    background(255);
+    
+    fill(255, 0, 0);
+    circle(width/2, height/2, radius*2);
+}
+
+// this function is triggered every time the special character 
+// which we passed to the 'bufferUntil()' function is encountered
+void serialEvent(Serial p){
+    // read the string accumulated since the end of the last transmission
+    // and store it in a temporary variable
+    String serialValue = p.readString();
+    // print the value in the console for reference
+    println(serialValue);
+    // convert the value stored as a String into a floating-point
+    // number and re-map it to a usable range from the
+    // original range between 0 and 4095 for ESP32 
+    // (replace with 0 to 1023 for Arduino)
+    // see https://processing.org/reference/map_.html
+    radius = map(float(serialValue), 0, 4095, 0, width/2); 
+}
+            </code></pre>
+        </section>
+    </main>
+</body>
+</html>
