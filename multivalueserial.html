@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sending multiple values through the serial connection</title>
+    <style>
+        pre {
+            display: inline-block;
+            padding: 15px;
+            background-color: lightgrey;
+            color: darkgreen;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sending multiple values through the serial connection.</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Code for the ESP32 written in Arduino:</h2>
+            <pre><code>
+//define pin numbers
+//to which the sensors are connected
+#define BUTTON 13
+#define KNOB A0
+#define FLEX A1
+
+
+void setup() {
+    //set up pin modes to be inputs for reading
+    pinMode(BUTTON, INPUT);
+    pinMode(KNOB, INPUT);
+    pinMode(FLEX, INPUT);
+    //start serial communication
+    Serial.begin(115200);
+
+}
+
+void loop() {
+    //read the high-low state of the button
+    //print it to the serial connection
+    Serial.print(digitalRead(BUTTON));
+    //print a separator symbol to the serial connection
+    Serial.print(',');
+    //read the position of the potentiometer in a range
+    //print it to the serial connection
+    Serial.print(analogRead(KNOB));
+    //print a separator symbol to the serial connection
+    Serial.print(',');
+    //read the position of the flex sensor in a range
+    //print it to the serial connection and
+    //add the END-OF-LINE character to mark the end of transmission
+    Serial.println(analogRead(FLEX));
+    //short delay
+    delay(10);
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Code written in Processing:</h2>
+            <pre><code>
+// import the library containing the functionality
+// necessary to establish and process serial communications                
+import processing.serial.*;
+// create a variable to represent a serial port
+Serial mySerial;
+
+float btn = 0;
+float knob = 0;
+float flex = 0;
+
+void setup(){
+    size(800, 800);
+    // create a new serial connection and store its representation
+    // in the variable created above
+    // the connection is created between 'this' program
+    // and the serial port with the name 'COM3'
+    // (replace with a different name as needed - 
+    // if you're using it with an Arduino, check the name of the port
+    // to which your board is connected by switching to ArduinoIDE, 
+    // then going to Tools -> Port submenu)
+    // the communicaiton is established at 115200 bits per second
+    // this rate needs to match the rate of transmission
+    // (if you're using it with an Arduino, check the function
+    // 'Serial.begin(rate_here)' - make sure the numbers match)
+    mySerial = new Serial(this, "COM3", 115200);
+    // accept characters until the special character is encountered
+    // in this case '\n', signifying END-OF-LINE (EDL) character
+    // This would correspond to the statement 'Serial.println'
+    // in Arduino, which adds the EDL character automatically -
+    // as opposed to 'Serial.print', which does not
+    mySerial.bufferUntil('\n');
+}
+
+void draw(){
+    //use the button to control the background
+    if(btn < 1){ //if 0
+        background(0);
+    }
+    else {
+        background(255);
+    }
+    //use the flex to control the color
+    fill(flex);
+    //use the potentiometer to control the size
+    circle(width/2, height/2, knob);
+}
+// this function is triggered every time the special character 
+// which we passed to the 'bufferUntil()' function is encountered
+void serialEvent(Serial p){
+    // read the string accumulated since the end of the last transmission
+    // and store it in a temporary variable
+    String transmission = p.readString();
+    // clean up the transmission removind whitespace characters,
+    // including end-of-line character
+    String cleanedUpTransmission = trim(transmission);
+    // split the transmitted string using the separator character
+    // (in this case a comma) and convert it into the array of floats
+    // e.g.: "1,23,45" -> [1.0, 23.0, 45.0] 
+    float[] values = float(split(cleanedUpTransmission, ','));
+    // check to make sure all the values are present
+    // in this case the expected number of values is 3
+    if(values.length == 3){
+        // reassign values to prepared variables
+        // using their ordering to distinguish which is which
+        btn = values[0];
+        // convert the value stored as a String into a floating-point
+        // number and re-map it to a usable range from the
+        // original range between 0 and 4095 for ESP32 
+        // (replace with 0 to 1023 for Arduino)
+        // see https://processing.org/reference/map_.html
+        knob = map(values[1], 0, 4095, 0, width);
+        flex = map(values[2], 3030, 1600, 0, 255);
+    }  
+}
+            </code></pre>
+        </section>
+    </main>
+</body>
+
+</html>
